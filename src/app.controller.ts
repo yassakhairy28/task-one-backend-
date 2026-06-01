@@ -1,10 +1,10 @@
 import express from "express";
 import { connectDatabase } from "./DB/DB_Connection.js";
-import webhookRouter from "./modules/webhook/webhook.route.js";
 import {
   globalErrorHandler,
   notFoundHanlder,
 } from "./middleware/error.handler.middleware.js";
+import webhookRouter from "./modules/webhook/webhook.controller.js";
 
 const appController = async (app: express.Application): Promise<void> => {
   app.use(express.json()); // Middleware to parse JSON bodies
